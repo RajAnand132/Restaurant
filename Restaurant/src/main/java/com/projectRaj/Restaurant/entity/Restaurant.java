@@ -1,134 +1,135 @@
 package com.projectRaj.Restaurant.entity;
 
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.URL;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 @Data
-@Component
+@NoArgsConstructor
+@AllArgsConstructor
 public class Restaurant {
-//    @NotNull
-    private Long RestaurantId;
+    @NotNull
+    private Long restaurantId;
 
-//    @NotBlank
-    private String RestaurantName;
+    @NotBlank
+    private String restaurantName;
 
-//    @NotBlank
-    private String RestaurantAddress;
+    @NotBlank
+    private String restaurantAddress;
 
-//    @Pattern(regexp = "\\+91-[0-9]{3}-[0-9]{3}-[0-9]{4}", message = "Invalid phone number format")
-    private String RestaurantPhoneNumber;
+    private String restaurantPhoneNumber;
 
-//    @NotBlank
-    private String RestaurantSpecialty;
+    @NotBlank
+    private String restaurantSpecialty;
 
-//    @Min(value = 1, message = "Total staff must be at least 1")
-//    @Max(value = 100, message = "Total staff cannot exceed 100")
-    private int RestaurantTotalStaff;
+    @Min(value = 1, message = "Total staff must be at least 1")
+    @Max(value = 100, message = "Total staff cannot exceed 100")
+    private int restaurantTotalStaff;
 
-//    @DecimalMin(value = "0.0", message = "Average rating must be a non-negative number")
-//    @DecimalMax(value = "5.0", message = "Average rating cannot exceed 5.0")
-    private double RestaurantAverageRating;
+    @DecimalMin(value = "0.0", message = "Average rating must be a non-negative number")
+    @DecimalMax(value = "5.0", message = "Average rating cannot exceed 5.0")
+    private double restaurantAverageRating;
 
-//    @NotEmpty
-    private List<String> RestaurantMenuItems;
+    @NotEmpty
+    private List<String> restaurantMenuItems;
 
-//    @NotEmpty
-    private String RestaurantChefName;
+    @NotEmpty
+    private String restaurantChefName;
 
-//    @URL(message = "Invalid URL format")
-    private String RestaurantWebsiteUrl;
+    @URL(message = "Invalid URL format")
+    private String restaurantWebsiteUrl;
 
-//    @Email(message = "Invalid email format")
-    private String RestaurantEmail;
+    @Email(message = "Invalid email format")
+    private String restaurantEmail;
 
     public Long getRestaurantId() {
-        return RestaurantId;
+        return restaurantId;
     }
 
     public void setRestaurantId(Long restaurantId) {
-        RestaurantId = restaurantId;
+        this.restaurantId = restaurantId;
     }
 
     public String getRestaurantName() {
-        return RestaurantName;
+        return restaurantName;
     }
 
     public void setRestaurantName(String restaurantName) {
-        RestaurantName = restaurantName;
+        this.restaurantName = restaurantName;
     }
 
     public String getRestaurantAddress() {
-        return RestaurantAddress;
+        return restaurantAddress;
     }
 
     public void setRestaurantAddress(String restaurantAddress) {
-        RestaurantAddress = restaurantAddress;
+        this.restaurantAddress = restaurantAddress;
     }
 
     public String getRestaurantPhoneNumber() {
-        return RestaurantPhoneNumber;
+        return restaurantPhoneNumber;
     }
 
     public void setRestaurantPhoneNumber(String restaurantPhoneNumber) {
-        RestaurantPhoneNumber = restaurantPhoneNumber;
+        this.restaurantPhoneNumber = restaurantPhoneNumber;
     }
 
     public String getRestaurantSpecialty() {
-        return RestaurantSpecialty;
+        return restaurantSpecialty;
     }
 
     public void setRestaurantSpecialty(String restaurantSpecialty) {
-        RestaurantSpecialty = restaurantSpecialty;
+        this.restaurantSpecialty = restaurantSpecialty;
     }
 
     public int getRestaurantTotalStaff() {
-        return RestaurantTotalStaff;
+        return restaurantTotalStaff;
     }
 
     public void setRestaurantTotalStaff(int restaurantTotalStaff) {
-        RestaurantTotalStaff = restaurantTotalStaff;
+        this.restaurantTotalStaff = restaurantTotalStaff;
     }
 
     public double getRestaurantAverageRating() {
-        return RestaurantAverageRating;
+        return restaurantAverageRating;
     }
 
     public void setRestaurantAverageRating(double restaurantAverageRating) {
-        RestaurantAverageRating = restaurantAverageRating;
+        this.restaurantAverageRating = restaurantAverageRating;
     }
 
     public List<String> getRestaurantMenuItems() {
-        return RestaurantMenuItems;
+        return restaurantMenuItems;
     }
 
     public void setRestaurantMenuItems(List<String> restaurantMenuItems) {
-        RestaurantMenuItems = restaurantMenuItems;
+        this.restaurantMenuItems = restaurantMenuItems;
     }
 
     public String getRestaurantChefName() {
-        return RestaurantChefName;
+        return restaurantChefName;
     }
 
     public void setRestaurantChefName(String restaurantChefName) {
-        RestaurantChefName = restaurantChefName;
+        this.restaurantChefName = restaurantChefName;
     }
 
     public String getRestaurantWebsiteUrl() {
-        return RestaurantWebsiteUrl;
+        return restaurantWebsiteUrl;
     }
 
     public void setRestaurantWebsiteUrl(String restaurantWebsiteUrl) {
-        RestaurantWebsiteUrl = restaurantWebsiteUrl;
+        this.restaurantWebsiteUrl = restaurantWebsiteUrl;
     }
 
     public String getRestaurantEmail() {
-        return RestaurantEmail;
+        return restaurantEmail;
     }
 
     public void setRestaurantEmail(String restaurantEmail) {
-        RestaurantEmail = restaurantEmail;
+        this.restaurantEmail = restaurantEmail;
     }
 }

@@ -4,6 +4,8 @@ import com.projectRaj.Restaurant.entity.Restaurant;
 import com.projectRaj.Restaurant.service.RestaurantService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -15,17 +17,17 @@ public class RestaurantController {
     RestaurantService restaurantService;
 
     @GetMapping("api/restaurant/id/{id}")
-    public Object getRestaurant(@PathVariable Long id) {
-        try{
-            restaurantService.getRestaurantById(id);
-        }
-        catch (Exception e){
-            String errorMsg = "No records found 🙁🙁🙁";
-            return errorMsg;
-        }
+    public ResponseEntity<Object> getRestaurant(@PathVariable Long id) {
+        Restaurant restaurant = restaurantService.getRestaurantById(id);
+
+        if (restaurant == null) {
             String errorMessage = "Restaurant with ID " + id + " not found 🙁🙁🙁";
-            return errorMessage; // Return an error message if user is not found
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorMessage);
+        } else {
+            return ResponseEntity.ok(restaurant);
+        }
     }
+
 
     @GetMapping("api/restaurants")
     public List<Restaurant>retreiveRestaurants() {
