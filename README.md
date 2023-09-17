@@ -46,7 +46,7 @@ Start the server
 
 ## Documentation Dataflow
 
-In your User Management System project, the data flows between different components as follows:
+In your Restaurant Management project, the data flows between different components as follows:
 
 1. **Client Request**:
     - Data flow begins when a client (e.g., a web browser or mobile app) sends an HTTP request to the Spring Boot application. These requests can be for various operations like adding, retrieving, updating, or deleting restaurant data.
