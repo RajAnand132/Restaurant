@@ -14,7 +14,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd restaurant-management-system
+  cd restaurant
 ```
 
 Install dependencies
