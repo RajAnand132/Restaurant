@@ -14,7 +14,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd user-management-system
+  cd restaurant-management-system
 ```
 
 Install dependencies
@@ -61,3 +61,183 @@ In your Restaurant Management project, the data flows between different componen
    After processing the request, the controller returns an HTTP response to the client. This response can include data (e.g., restaurant information, success messages) and an HTTP status code (e.g., 200 for success, 404 for not found, 500 for server error).
 
 Overall, data flows from the client through the controller to the data access layer (in-memory list in this case) for CRUD operations, and then back to the client as an HTTP response.
+
+## API Reference
+
+
+#### Add multiple Restaurants
+
+```http
+  POST localhost:8080/api/restaurant/list
+```
+
+| Parameter | Request Type     | Description                                                |
+| :-------- | :------- |:-----------------------------------------------------------|
+| `Array of JSON objects` | `Request Body` | **Required**. Restaurants objects with restaurants details |
+
+### Example
+#### Request Body:
+```
+[
+  {
+    "restaurantId": 1,
+    "restaurantName": "Delicious Delights",
+    "restaurantAddress": "123 Main Street, Cityville",
+    "restaurantPhoneNumber": "+911234567890",
+    "restaurantSpecialty": "Italian Cuisine",
+    "restaurantTotalStaff": 25,
+    "restaurantAverageRating": 4.5,
+    "restaurantMenuItems": ["Pizza", "Pasta", "Salad", "Tiramisu"],
+    "restaurantChefName": "Chef Giovanni",
+    "restaurantWebsiteUrl": "https://www.deliciousdelights.com",
+    "restaurantEmail": "info@deliciousdelights.com"
+  },
+  {
+    "restaurantId": 2,
+    "restaurantName": "Sushi Sensation",
+    "restaurantAddress": "456 Oak Avenue, Townsville",
+    "restaurantPhoneNumber": "+919876543210",
+    "restaurantSpecialty": "Japanese Cuisine",
+    "restaurantTotalStaff": 12,
+    "restaurantAverageRating": 4.0,
+    "restaurantMenuItems": ["Sushi", "Sashimi", "Tempura", "Miso Soup"],
+    "restaurantChefName": "Chef Hiroshi",
+    "restaurantWebsiteUrl": "https://www.sushisensation.com",
+    "restaurantEmail": "info@sushisensation.com"
+  },
+  {},
+  {}
+  ...................more attributes
+]
+```
+#### Response:
+10 Restaurant added successfully 😊😊😊
+
+#### Get Restaurant
+
+```http
+  GET localhost:8080/api/restaurant/id/{id}
+
+```
+
+| Parameter | Request Type     | Description                                            |
+| :-------- | :------- |:-------------------------------------------------------|
+| `restaurantId`      | `Path parameter` | **Required**.  restaurantId of the restaurant to fetch |
+
+### Example
+#### Response
+```
+{
+    "restaurantId": 1,
+    "restaurantName": "Delicious Delights",
+    "restaurantAddress": "123 Main Street, Cityville",
+    "restaurantPhoneNumber": "+911234567890",
+    "restaurantSpecialty": "Italian Cuisine",
+    "restaurantTotalStaff": 25,
+    "restaurantAverageRating": 4.5,
+    "restaurantMenuItems": [
+        "Pizza",
+        "Pasta",
+        "Salad",
+        "Tiramisu"
+    ],
+    "restaurantChefName": "Chef Giovanni",
+    "restaurantWebsiteUrl": "https://www.deliciousdelights.com",
+    "restaurantEmail": "info@deliciousdelights.com"
+}
+```
+
+#### Get All Restaurants
+
+```http
+  GET localhost:8080/api/restaurants
+
+```
+
+| Parameter | Request Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `N/A`      | `N/A` | **Required**. Nothing |
+
+### Example
+#### Response
+```
+[
+    {
+        "restaurantId": 1,
+        "restaurantName": "Delicious Delights",
+        "restaurantAddress": "123 Main Street, Cityville",
+        "restaurantPhoneNumber": "+911234567890",
+        "restaurantSpecialty": "Italian Cuisine",
+        "restaurantTotalStaff": 25,
+        "restaurantAverageRating": 4.5,
+        "restaurantMenuItems": [
+            "Pizza",
+            "Pasta",
+            "Salad",
+            "Tiramisu"
+        ],
+        "restaurantChefName": "Chef Giovanni",
+        "restaurantWebsiteUrl": "https://www.deliciousdelights.com",
+        "restaurantEmail": "info@deliciousdelights.com"
+    },
+    {},
+    {}
+    ......................more attributes
+]
+```
+#### Update Restaurant
+
+```http
+  PUT localhost:8080/api/restaurant/id/{id}
+```
+
+| Parameter | Request Type     | Description                                             |
+| :-------- | :------- |:--------------------------------------------------------|
+| `restaurantId`      | `Path parameter` | **Required**.  restaurantId of the restaurant to Update |
+| `JSON`      | `Request Body` | **Required**.  Body of the restaurant to Update         |
+
+### Example
+#### Request
+```
+{
+    "restaurantId": 11,
+    "restaurantName": "Delicious Delights",
+    "restaurantAddress": "123567 Main Street, Cityville",
+    "restaurantPhoneNumber": "+911234567890",
+    "restaurantSpecialty": "Indian Cuisine",
+    "restaurantTotalStaff": 25,
+    "restaurantAverageRating": 4.5,
+    "restaurantMenuItems": ["Pizza", "Pasta", "Salad", "Tiramisu"],
+    "restaurantChefName": "Chef Giovanni",
+    "restaurantWebsiteUrl": "https://www.deliciousdelights.com",
+    "restaurantEmail": "info@deliciousdelights.com"
+  }
+```
+#### Response
+Restaurant updated successfully 😊😊😊
+
+#### Delete Restaurant
+
+```http
+  DELETE localhost:8080/restaurant/name/{name}
+
+```
+| Parameter        | Request Type     | Description                                                         |
+|:-----------------| :------- |:--------------------------------------------------------------------|
+| `restaurantName` | `Path parameter` | **Required**. restaurantName of the restaurant to delete restaurant |
+
+### Example
+#### Response:
+Restaurant deleted successfully 😒😒😒
+
+## Support
+
+For support, email abc@gmail.com or join our Slack channel.
+
+
+## Acknowledgements
+
+- [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+- [Awesome README](https://github.com/matiassingers/awesome-readme)
+- [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+

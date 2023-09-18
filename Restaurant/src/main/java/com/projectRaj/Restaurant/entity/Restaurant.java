@@ -20,6 +20,7 @@ public class Restaurant {
     @NotBlank
     private String restaurantAddress;
 
+    @Pattern(regexp = "\\+91\\d{10}", message = "Phone number is not valid")
     private String restaurantPhoneNumber;
 
     @NotBlank
@@ -45,91 +46,4 @@ public class Restaurant {
     @Email(message = "Invalid email format")
     private String restaurantEmail;
 
-    public Long getRestaurantId() {
-        return restaurantId;
-    }
-
-    public void setRestaurantId(Long restaurantId) {
-        this.restaurantId = restaurantId;
-    }
-
-    public String getRestaurantName() {
-        return restaurantName;
-    }
-
-    public void setRestaurantName(String restaurantName) {
-        this.restaurantName = restaurantName;
-    }
-
-    public String getRestaurantAddress() {
-        return restaurantAddress;
-    }
-
-    public void setRestaurantAddress(String restaurantAddress) {
-        this.restaurantAddress = restaurantAddress;
-    }
-
-    public String getRestaurantPhoneNumber() {
-        return restaurantPhoneNumber;
-    }
-
-    public void setRestaurantPhoneNumber(String restaurantPhoneNumber) {
-        this.restaurantPhoneNumber = restaurantPhoneNumber;
-    }
-
-    public String getRestaurantSpecialty() {
-        return restaurantSpecialty;
-    }
-
-    public void setRestaurantSpecialty(String restaurantSpecialty) {
-        this.restaurantSpecialty = restaurantSpecialty;
-    }
-
-    public int getRestaurantTotalStaff() {
-        return restaurantTotalStaff;
-    }
-
-    public void setRestaurantTotalStaff(int restaurantTotalStaff) {
-        this.restaurantTotalStaff = restaurantTotalStaff;
-    }
-
-    public double getRestaurantAverageRating() {
-        return restaurantAverageRating;
-    }
-
-    public void setRestaurantAverageRating(double restaurantAverageRating) {
-        this.restaurantAverageRating = restaurantAverageRating;
-    }
-
-    public List<String> getRestaurantMenuItems() {
-        return restaurantMenuItems;
-    }
-
-    public void setRestaurantMenuItems(List<String> restaurantMenuItems) {
-        this.restaurantMenuItems = restaurantMenuItems;
-    }
-
-    public String getRestaurantChefName() {
-        return restaurantChefName;
-    }
-
-    public void setRestaurantChefName(String restaurantChefName) {
-        this.restaurantChefName = restaurantChefName;
-    }
-
-    public String getRestaurantWebsiteUrl() {
-        return restaurantWebsiteUrl;
-    }
-
-    public void setRestaurantWebsiteUrl(String restaurantWebsiteUrl) {
-        this.restaurantWebsiteUrl = restaurantWebsiteUrl;
-    }
-
-    public String getRestaurantEmail() {
-        return restaurantEmail;
-    }
-
-    public void setRestaurantEmail(String restaurantEmail) {
-        this.restaurantEmail = restaurantEmail;
-    }
 }
